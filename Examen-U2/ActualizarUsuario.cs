@@ -37,7 +37,7 @@ namespace Examen_U2
             string correo = "";
             string telefono = "";
 
-            if (txtCorreo.Text.Length == 0)
+            if (txtCorreo.Text.Length == 0 )
             {
                 correo = "NULL";
             }
@@ -55,7 +55,7 @@ namespace Examen_U2
                 telefono = "'" + mtbTelefono.Text + "'";
             }
 
-            if (mtbTelefono.Text.Length > 0 && mtbTelefono.Text.Length < 10)
+            if ((mtbTelefono.Text.Length > 0 && mtbTelefono.Text.Length < 10) || mtbTelefono.Text.Contains(" "))
             {
                 MessageBox.Show("Numero de telefono inconsistente, favor de revisar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
