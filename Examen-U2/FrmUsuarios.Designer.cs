@@ -28,21 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvUsuarios = new DataGridView();
             panel1 = new Panel();
-            panel3 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            panel3 = new Panel();
             butInsertar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
             dgvUsuarios.Location = new Point(2, 100);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.Size = new Size(675, 277);
@@ -51,7 +60,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.BackColor = Color.FromArgb(0, 0, 192);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(2, 0);
@@ -59,23 +68,13 @@
             panel1.Size = new Size(850, 94);
             panel1.TabIndex = 1;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(255, 192, 128);
-            panel3.Controls.Add(butInsertar);
-            panel3.Location = new Point(683, 94);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(169, 283);
-            panel3.TabIndex = 3;
-            panel3.Paint += panel3_Paint;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(255, 128, 0);
+            label1.BackColor = Color.FromArgb(0, 0, 192);
             label1.Font = new Font("Bauhaus 93", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(10, 20);
+            label1.Location = new Point(48, 20);
             label1.Name = "label1";
             label1.Size = new Size(416, 54);
             label1.TabIndex = 5;
@@ -85,22 +84,33 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.klipartz_com__5_;
-            pictureBox1.Location = new Point(432, 12);
+            pictureBox1.Location = new Point(725, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(71, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(128, 128, 255);
+            panel3.Controls.Add(butInsertar);
+            panel3.Location = new Point(683, 94);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(169, 283);
+            panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
+            // 
             // butInsertar
             // 
+            butInsertar.BackgroundImage = Properties.Resources.pngegg__5_;
+            butInsertar.BackgroundImageLayout = ImageLayout.Stretch;
             butInsertar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             butInsertar.ForeColor = Color.Black;
-            butInsertar.Location = new Point(5, 73);
+            butInsertar.Location = new Point(16, 71);
             butInsertar.Name = "butInsertar";
-            butInsertar.Size = new Size(152, 23);
+            butInsertar.Size = new Size(141, 139);
             butInsertar.TabIndex = 7;
-            butInsertar.Text = "Insertar Nuevo Usuario";
             butInsertar.UseVisualStyleBackColor = true;
             butInsertar.Click += butInsertar_Click;
             // 
@@ -121,8 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 

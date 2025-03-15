@@ -33,37 +33,46 @@ namespace Examen_U2
 
         private void butActualizar_Click(object sender, EventArgs e)
         {
-            try
+
+            string correo = "";
+            string telefono = "";
+
+            if (txtCorreo.Text.Length == 0)
             {
-                string correo = "";
-                string telefono = "";
+                correo = "NULL";
+            }
+            else
+            {
+                correo = "'" + txtCorreo.Text + "'";
+            }
 
-                if (txtCorreo.Text.Length == 0)
-                {
-                    correo = "NULL";
-                }
-                else
-                {
-                    correo = "'" + txtCorreo.Text + "'";
-                }
+            if (mtbTelefono.Text.Length == 0)
+            {
+                telefono = "NULL";
+            }
+            else
+            {
+                telefono = "'" + mtbTelefono.Text + "'";
+            }
 
-                if (mtbTelefono.Text.Length < 9)
-                {
-                    telefono = "NULL";
-                }
-                else
-                {
-                    telefono = "'" + mtbTelefono.Text + "'";
-                }
-
+            if (mtbTelefono.Text.Length > 0 && mtbTelefono.Text.Length < 10)
+            {
+                MessageBox.Show("Numero de telefono inconsistente, favor de revisar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtNombre.Text.CompareTo("") == 0 || txtApMaterno.Text.CompareTo("") == 0 || txtApPaterno.Text.CompareTo("") == 0)
+            {
+                MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
                 Datos datos = new Datos();
                 bool f = datos.comando("UPDATE USUARIOS " +
-                                       "SET APATERNO = '" + txtApPaterno.Text +
-                                       "', AMATERNO = '" + txtApMaterno.Text +
-                                       "', NOMBRE = '" + txtNombre.Text +
-                                       "', TELEFONO = " + telefono +
-                                       ", CORREO = " + correo +
-                                       " WHERE ID = " + txtID.Text);
+                                        "SET APATERNO = '" + txtApPaterno.Text +
+                                        "', AMATERNO = '" + txtApMaterno.Text +
+                                        "', NOMBRE = '" + txtNombre.Text +
+                                        "', TELEFONO = " + telefono +
+                                        ", CORREO = " + correo +
+                                        " WHERE ID = " + txtID.Text);
 
                 if (f == true)
                 {
@@ -74,10 +83,6 @@ namespace Examen_U2
                 {
                     MessageBox.Show("Error al actualizar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Alguno de los datos en inconsistente, favor de revisar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,6 +110,11 @@ namespace Examen_U2
                     MessageBox.Show("Error al eliminar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,19 +29,6 @@ namespace Examen_U2
             }
         }
 
-        public bool prueba()
-        {
-            try
-            {
-                abrirConexion();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
         public DataSet consulta(string consulta)
         {
             try

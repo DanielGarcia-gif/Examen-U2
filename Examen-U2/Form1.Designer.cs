@@ -30,8 +30,8 @@
         {
             butAgenda = new Button();
             panel1 = new Panel();
-            label1 = new Label();
             panel2 = new Panel();
+            label1 = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -41,7 +41,7 @@
             // butAgenda
             // 
             butAgenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butAgenda.Location = new Point(116, 223);
+            butAgenda.Location = new Point(117, 207);
             butAgenda.Name = "butAgenda";
             butAgenda.Size = new Size(75, 23);
             butAgenda.TabIndex = 0;
@@ -59,6 +59,13 @@
             panel1.Size = new Size(370, 72);
             panel1.TabIndex = 1;
             // 
+            // panel2
+            // 
+            panel2.Location = new Point(278, 71);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(92, 188);
+            panel2.TabIndex = 2;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -69,13 +76,6 @@
             label1.Size = new Size(193, 30);
             label1.TabIndex = 0;
             label1.Text = "Tablas Disponibles";
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(278, 71);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(92, 188);
-            panel2.TabIndex = 2;
             // 
             // panel3
             // 
@@ -88,7 +88,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.klipartz_com__5_;
-            pictureBox1.Location = new Point(100, 108);
+            pictureBox1.Location = new Point(101, 91);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(106, 99);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -101,9 +101,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(370, 258);
             Controls.Add(pictureBox1);
-            Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(butAgenda);
+            Controls.Add(panel3);
             Name = "Form1";
             Text = "Tablas Disponibles";
             panel1.ResumeLayout(false);

@@ -36,7 +36,7 @@ namespace Examen_U2
                 correo = "'" + txtCorreo.Text + "'";
             }
 
-            if (mtbTelefono.Text.Length < 9)
+            if (mtbTelefono.Text.Length == 0)
             {
                 telefono = "NULL";
             }
@@ -45,24 +45,35 @@ namespace Examen_U2
                 telefono = "'" + mtbTelefono.Text + "'";
             }
 
-            Datos datos = new Datos();
-            bool f = datos.comando("INSERT INTO USUARIOS values " +
-                                   "('" + txtApPaterno.Text.Replace("'", "''") +
-                                   "','" + txtApMaterno.Text.Replace("'", "''") +
-                                   "','" + txtNombre.Text.Replace("'", "''") +
-                                   "'," + telefono +
-                                   "," + correo +
-                                   ")");
-
-            if (f == true)
+            if(mtbTelefono.Text.Length > 0 && mtbTelefono.Text.Length < 10)
             {
-                MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                MessageBox.Show("Numero de telefono inconsistente, favor de revisar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if(txtNombre.Text.CompareTo("") == 0 || txtApMaterno.Text.CompareTo("") == 0 || txtApPaterno.Text.CompareTo("") == 0)
             {
                 MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                Datos datos = new Datos();
+                bool f = datos.comando("INSERT INTO USUARIOS values " +
+                                       "('" + txtApPaterno.Text.Replace("'", "''") +
+                                       "','" + txtApMaterno.Text.Replace("'", "''") +
+                                       "','" + txtNombre.Text.Replace("'", "''") +
+                                       "'," + telefono +
+                                       "," + correo +
+                                       ")");
+
+                if (f == true)
+                {
+                    MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } 
         }
 
         private void butCancelar_Click(object sender, EventArgs e)

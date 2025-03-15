@@ -15,6 +15,7 @@ namespace Examen_U2
         public FrmUsuarios()
         {
             InitializeComponent();
+            dgvUsuarios.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
